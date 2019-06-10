@@ -18,6 +18,7 @@ public class GoogleSearchResult extends Page {
 
     @FindBy(id = "resultStats")
     WebElement resultStats;
+    private String baseUrl = "https://www.google.com/search?source=hp&ei=ahf-XKyWBunnrgSFmbkQ&q=staples+solutions+uk&oq=staples+solutions+uk&gs_l=psy-ab.12..0i19j0i22i30i19l2.2610.2752..3483...0.0..1.187.684.0j4......0....1..gws-wiz.....0..0j0i22i30.ANUEkaoUDJQ";
 
     public GoogleSearchResult(WebDriver driver) {
         super(driver);
@@ -44,18 +45,26 @@ public class GoogleSearchResult extends Page {
     }
 
     public void goStaplesWebSite() {
+        waitClickability(staplesWebSite);
         staplesWebSite.click();
     }
 
     public String getResultStats() {
+        waitVisibility(resultStats);
         return resultStats.getText();
     }
 
     public String getInputText() {
+        waitVisibility(inpuText);
         return inpuText.getText();
     }
 
     public boolean checkIsDisplayed() {
+        waitVisibility(logoGoogleSmall);
         return logoGoogleSmall.isDisplayed();
+    }
+    public GoogleSearchResult goToHome() {
+        driver.get(baseUrl);
+        return this;
     }
 }
