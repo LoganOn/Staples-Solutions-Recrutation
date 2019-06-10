@@ -4,11 +4,12 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 
-public class Page  {
+public abstract class Page  {
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -23,4 +24,6 @@ public class Page  {
         FileUtils.copyFile(SrcFile, DestFile);
 
     }
+
+    public abstract boolean checkIsDisplayed();
 }
