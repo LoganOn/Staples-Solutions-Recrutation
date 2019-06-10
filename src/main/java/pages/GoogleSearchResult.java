@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleSearchResult extends Page {
     @FindBy(className = "logoGoogleMain")
@@ -54,10 +53,6 @@ public class GoogleSearchResult extends Page {
         return resultStats.getText();
     }
 
-    public String getInputText() {
-        waitVisibility(inpuText);
-        return inpuText.getText();
-    }
 
     public boolean checkIsDisplayed() {
         waitVisibility(logoGoogleSmall);

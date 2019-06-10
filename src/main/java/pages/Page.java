@@ -4,10 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public abstract class Page {
     public WebDriver driver;
@@ -25,9 +22,11 @@ public abstract class Page {
         FileUtils.copyFile(SrcFile, DestFile);
 
     }
+
     public void waitVisibility(WebElement elementBy) {
         wait.until(ExpectedConditions.visibilityOfAllElements(elementBy));
     }
+
     public void waitClickability(WebElement elementBy) {
         wait.until(ExpectedConditions.elementToBeClickable(elementBy));
     }

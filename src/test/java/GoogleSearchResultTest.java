@@ -8,8 +8,6 @@ public class GoogleSearchResultTest extends BaseTest {
     public void googleSearchResult() {
         GoogleSearchResult googleSearchResult = new GoogleSearchResult(driver);
         googleSearchResult.goToHome();
-       // Assert.assertTrue(googleSearchResult.checkIsDisplayed());
-       // Assert.assertEquals("staples solutions uk", googleSearchResult.getInputText());
         System.out.println("Number of found : " + googleSearchResult.cuteResult(googleSearchResult.getResultStats()));
         googleSearchResult.goStaplesWebSite();
 
