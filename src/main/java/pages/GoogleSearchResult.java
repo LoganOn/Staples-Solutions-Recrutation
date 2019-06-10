@@ -1,9 +1,22 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleSearchResult extends Page {
+    @FindBy(className = "logoGoogleMain")
+    WebElement logoGoogleSmall;
+
+    @FindBy(className = "gLFyf")
+    WebElement inpuText;
+
+    @FindBy(xpath = "//a[@href='https://www.staples.co.uk/']")
+    WebElement staplesWebSite;
+
+    @FindBy(id = "resultStats")
+    WebElement resultStats;
     public GoogleSearchResult(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
@@ -23,5 +36,20 @@ public class GoogleSearchResult extends Page {
             concatenate = concatenate.concat(str);
 
         return concatenate;
+    }
+
+    public void goStaplesWebSite() {
+        staplesWebSite.click();
+    }
+
+    public String getResultStats() {
+        return resultStats.getText();
+    }
+
+    public String getInputText() {
+        return inpuText.getText();
+    }
+    public boolean checkLogoDisplayed() {
+        return logoGoogleSmall.isDisplayed();
     }
 }

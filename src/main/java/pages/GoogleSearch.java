@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleSearch extends Page {
     @FindBy(id = "hplogo")
-    WebElement logo;
+    WebElement logoGoogleMain;
 
     @FindBy(className = "gLFyf")
     WebElement inputText;
@@ -30,6 +30,6 @@ public class GoogleSearch extends Page {
     }
 
     public boolean checkLogoDisplayed() {
-        return logo.isDisplayed();
+        return logoGoogleMain.isDisplayed();
     }
 }
