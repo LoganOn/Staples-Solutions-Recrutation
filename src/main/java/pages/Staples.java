@@ -1,6 +1,7 @@
 package pages;
 
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,12 @@ public class Staples extends Page {
         super(driver, wait);
     }
 
+    public boolean checkIsDisplayed() {
+        return staplesLogo.isDisplayed();
+    }
 
+    public Point locationStaplesLogo() {
+        return staplesLogo.getLocation();
+    }
 
 }

@@ -49,7 +49,7 @@ public class GoogleSearchResult extends Page {
     public String getInputText() {
         return inpuText.getText();
     }
-    public boolean checkLogoDisplayed() {
+    public boolean checkIsDisplayed() {
         return logoGoogleSmall.isDisplayed();
     }
 }

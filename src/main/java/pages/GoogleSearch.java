@@ -29,7 +29,7 @@ public class GoogleSearch extends Page {
         searchButton.click();
     }
 
-    public boolean checkLogoDisplayed() {
+    public boolean checkIsDisplayed() {
         return logoGoogleMain.isDisplayed();
     }
 }
