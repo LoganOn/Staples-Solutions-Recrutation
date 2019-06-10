@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleSearchResult extends Page {
@@ -17,9 +18,13 @@ public class GoogleSearchResult extends Page {
 
     @FindBy(id = "resultStats")
     WebElement resultStats;
-    public GoogleSearchResult(WebDriver driver, WebDriverWait wait) {
-        super(driver, wait);
+
+    public GoogleSearchResult(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+
     }
+
     public int cuteResult(String s) {
         s.trim();
         String str = s.substring(0, s.indexOf('w') - 1);
@@ -49,6 +54,7 @@ public class GoogleSearchResult extends Page {
     public String getInputText() {
         return inpuText.getText();
     }
+
     public boolean checkIsDisplayed() {
         return logoGoogleSmall.isDisplayed();
     }
